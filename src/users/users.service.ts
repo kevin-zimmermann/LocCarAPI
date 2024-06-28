@@ -27,6 +27,8 @@ export class UsersService {
         const user = this.usersRepository.create({ email, password: hashedPassword });
           await this.usersRepository.save(user);
           return {"message" : "Utilisateur crée"}
+      }else{
+        throw new BadRequestException('Les MDP ne correspondent pas');
       }
     }
 

@@ -12,7 +12,7 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @MinLength(6)
-  // @Equals('password', { message: 'Passwords do not match' })
+  // @Equals('password')
   confPassword: string;
 
 

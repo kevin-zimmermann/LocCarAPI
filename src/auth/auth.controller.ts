@@ -12,12 +12,15 @@ export class AuthController {
     return this.authService.getHello();
 
   }
+
+  /// Route to login
   @HttpCode(HttpStatus.OK)
   @Post('login')
   signIn(@Body() loginDto: LoginDto) {
     return this.authService.signIn(loginDto.email, loginDto.password);
   }
 
+  /// Route to check Token
   @UseGuards(AuthGuard)
   @Get('profile')
   getProfile(@Request() req) {
