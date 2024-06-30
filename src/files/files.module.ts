@@ -8,7 +8,7 @@ import { File } from "./file.entity";
 import { FileValidatorPipe } from "./dto/FileValidatorPipe";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([File])],
+  imports: [TypeOrmModule.forFeature([File]),UsersModule],
   controllers: [FilesController],
   providers: [FilesService,FileValidatorPipe],
 })
