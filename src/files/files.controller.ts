@@ -6,7 +6,8 @@ import {
   Post,
   UploadedFiles,
   UseGuards,
-  UseInterceptors
+  UseInterceptors,
+  Request
 } from "@nestjs/common";
 import { FilesInterceptor } from "@nestjs/platform-express";
 import { FilesService } from "./files.service";
@@ -51,14 +52,16 @@ export class FilesController {
       }
     })
   }))
-  // @UsePipes(FileValidatorPipe)
-  uploadFile(@Request req, @UploadedFiles() files: Array<Express.Multer.File>) {
-    console.log(files)
-    console.log(req.user)
-    return this.filesService.save(req.user,files)
+
+  uploadFile(@Request() req, @UploadedFiles() files: Array<Express.Multer.File>) {
+    // console.log(files)
+    // console.log(req.user)
+     return this.filesService.save(req.user,files)
   }
 
-  // @UseGuards(AuthGuard)
-  // @Get('getFiles')
-  // getFiles()
+  @UseGuards(AuthGuard)
+  @Get('getFiles')
+  getFiles(@Request() req){
+    return this.filesService.findFilesByUser(req.user['id']);
+}
 }

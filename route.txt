@@ -1,0 +1,12 @@
+POST http://localhost:3000/auth/login -> {"email":"","password":""}
+POST http://localhost:3000/auth/register-> {'email': "", 'password': "", 'confPassword': ""}
+GET http://localhost:3000/auth/profile-> Authorization: Bearer + token 
+
+
+POST http://localhost:3000/files/upload -> Array (files)
+GET http://localhost:3000/files/getFiles -> [
+    {
+        "id": 18,
+        "filename": "Booking_YPTB0015884884_13.pdf"
+    }
+]
