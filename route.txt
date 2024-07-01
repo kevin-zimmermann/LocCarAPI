@@ -7,6 +7,10 @@ POST http://localhost:3000/files/upload -> Array (files)
 GET http://localhost:3000/files/getFiles -> [
     {
         "id": 18,
-        "filename": "Booking_YPTB0015884884_13.pdf"
+        "filename": "files.pdf"
+    }
+    {
+        "id": 19,
+        "filename": "files.jpeg"
     }
 ]
