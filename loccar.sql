@@ -50,7 +50,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(13, 'lolaai@gmail.com', '$2b$10$qpRuUv8YKbA1Tkwq4cIiy.vlXf2GiFxVFl45J0e3fZyGUjZbA58dK');
+(13, 'test@gmail.com', '$2b$10$qpRuUv8YKbA1Tkwq4cIiy.vlXf2GiFxVFl45J0e3fZyGUjZbA58dK');
 
 --
 -- Index pour les tables déchargées
